@@ -16,7 +16,7 @@ On its own, without a global planner, it was not competitive (§5). That gap, an
 closed, is the main lesson of the project.
 
 
-> Part of my Physical AI project set: [lang_nav](https://github.com/Deivaprakash56/lang_nav) (Language-guided navigation) · [il_arm](https://github.com/Deivaprakash56/il_arm) (Imitation learning for pick-and-place).
+> Part of my Physical AI project set: [lang_nav](https://github.com/Deivaprakash56/-vlm-language-navigation-ros2) (Language-guided navigation) · [il_arm](https://github.com/Deivaprakash56/il_arm) (Imitation learning for pick-and-place).
 > Everything here runs in simulation. The ROS 2 interfaces are the same ones a real robot uses.
 
 ## Quick start
