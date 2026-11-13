@@ -24,7 +24,7 @@ closed, is the main lesson of the project.
 Requirements: Ubuntu 22.04, ROS 2 Humble, Nav2 and Gazebo 11, Python 3.10.
 
 ```bash
-git clone https://github.com/Deivaprakash56/rl_nav.git ~/rl_nav && cd ~/rl_nav
+git clone https://github.com/Deivaprakash56/rl-navigation-vs-nav2.git ~/rl_nav && cd ~/rl_nav
 python3 -m venv --system-site-packages .venv && touch .venv/COLCON_IGNORE
 .venv/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu
 .venv/bin/pip install "numpy<2" stable-baselines3 gymnasium matplotlib tensorboard imageio pyyaml
