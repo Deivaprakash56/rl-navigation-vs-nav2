@@ -1,0 +1,20 @@
+digraph G {
+  rankdir=LR; pad=0.3; nodesep=0.35; ranksep=0.5; compound=true;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10.5, color="#555555", fillcolor="#f4f4f4"];
+  edge [fontname="Helvetica", fontsize=9, color="#555555"];
+  subgraph cluster_train { label="1. Train (fast 2D sim, ~1,800 steps/s/core)"; fontname="Helvetica"; fontsize=11; style="rounded,dashed"; color="#999999";
+    env  [label="LidarNavEnv\nrandom rooms, TB3-waffle kinematics,\n360-beam LiDAR, noise / dropout / latency", fillcolor="#e3f0ff"];
+    ppo  [label="PPO (Stable-Baselines3)\n8 parallel envs, MLP 256×256", fillcolor="#fde2e2"];
+    env -> ppo [label="obs 29-d, reward"]; ppo -> env [label="(v, ω)"];
+  }
+  model [label="best_model.zip", shape=cylinder, fillcolor="#fff6d5"];
+  subgraph cluster_deploy { label="2. Deploy + benchmark (Gazebo, same NavigateToPose API)"; fontname="Helvetica"; fontsize=11; style="rounded,dashed"; color="#999999";
+    node_ [label="rl_policy_node\naction: rl_navigate_to_pose\nlidar_to_obs() — same code as training", fillcolor="#d9f2d9"];
+    nav2  [label="Nav2\naction: navigate_to_pose\nNavFn + DWB", fillcolor="#e8e0f8"];
+    bench [label="benchmark.py\n10-goal tour × repeats\nsuccess · collisions · path · time · clearance", fillcolor="#fff6d5"];
+    gz    [label="Gazebo TurtleBot3 world\n/scan, AMCL map→base", fillcolor="#e3f0ff"];
+    bench -> node_; bench -> nav2;
+    node_ -> gz [label="/cmd_vel"]; nav2 -> gz [label="/cmd_vel"];
+  }
+  ppo -> model; model -> node_;
+}

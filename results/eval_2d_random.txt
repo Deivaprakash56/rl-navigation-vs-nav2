@@ -1,0 +1,8 @@
+episodes          : 100
+success rate      : 0.050
+collision rate    : 0.900
+timeout rate      : 0.050
+path efficiency   : 0.587  (straight line start->stop / travelled, successes only)
+mean steps        : 142.9
+blocked line-of-sight episodes: 35 -> success 0.000, collision 0.971
+clear line-of-sight episodes  : 65 -> success 0.077, collision 0.862

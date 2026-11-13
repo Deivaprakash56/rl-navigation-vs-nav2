@@ -1,0 +1,9 @@
+episodes          : 300
+success rate      : 0.923
+collision rate    : 0.063
+timeout rate      : 0.013
+path efficiency   : 0.928  (straight line start->stop / travelled, successes only)
+mean steps        : 75.3
+blocked line-of-sight episodes: 108 -> success 0.787, collision 0.176
+clear line-of-sight episodes  : 192 -> success 1.000, collision 0.000
+wrote src/rl_nav/docs/eval_2d_grid.png

@@ -1,0 +1,13 @@
+/build/
+/install/
+/log/
+/logs/
+/.venv/
+/third_party/
+/data/
+/docs/
+__pycache__/
+*.pyc
+.pytest_cache/
+# generated runs are ignored; the pretrained models shipped with the repo are force-added
+/runs/

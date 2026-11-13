@@ -1,0 +1,14 @@
+# Goal tour in the Nav2 turtlebot3_world map frame. Robot spawns at (-2.0, -0.5).
+# Each leg crosses the pillar grid, so both planners must avoid obstacles.
+frame_id: map
+goals:
+  - {x: 0.55, y: -0.55, yaw: 0.0}
+  - {x: 2.0, y: 0.5, yaw: 1.57}
+  - {x: 0.0, y: 2.0, yaw: 3.14}
+  - {x: -1.6, y: 1.5, yaw: -1.57}
+  - {x: -0.55, y: 0.55, yaw: 0.0}
+  - {x: 1.6, y: -1.5, yaw: 0.0}
+  - {x: 0.0, y: -2.0, yaw: 3.14}
+  - {x: -1.6, y: -1.5, yaw: 1.57}
+  - {x: 0.55, y: 0.55, yaw: 0.0}
+  - {x: -2.0, y: -0.5, yaw: 0.0}
